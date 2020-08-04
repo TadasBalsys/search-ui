@@ -15,7 +15,7 @@ const MemberTree = (props: Props) => {
   return (
     <>
       {props.categories.map((cat) => {
-        console.log(cat);
+        
         return (
           <>
             {hasChildren(cat) ? (
