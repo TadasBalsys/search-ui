@@ -19,8 +19,8 @@ const MemberTree: React.FC<Props> = ({ categories }) => {
       return;
     }
     if (index === display) {
-      setClickedElem(null);
       setDisplay(-1);
+      setClickedElem(null);
     } else {
       setDisplay(index);
       setClickedElem(e.target);
@@ -31,7 +31,7 @@ const MemberTree: React.FC<Props> = ({ categories }) => {
     <>
       {(categories as Array<SuperCat | SubCat>).map(
         (subCat: SubCat, index: number) => (
-          <div onClick={(e) => handleClick(e, index)}>
+          <div key={index} onClick={(e) => handleClick(e, index)}>
             <h5>{subCat.title}</h5>
             <SubCatTree
               key={index}

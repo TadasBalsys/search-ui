@@ -10,14 +10,14 @@ const Category: React.FC<Props> = ({ category, isVisible }) => {
   const { subCat } = category;
 
   return (
-    <div className={isVisible ? '' : 'display-none'}>
-      {(subCat as Array<SubCat | Categories>).map((item) => (
-        <div>
+    <>
+      {(subCat as Array<SubCat | Categories>).map((item, index) => (
+        <div key={index} className={isVisible ? '' : 'display-none'}>
           <input type='checkbox' />
           <label htmlFor=''>{item.title}</label>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

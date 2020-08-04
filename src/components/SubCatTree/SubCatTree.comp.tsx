@@ -11,7 +11,7 @@ interface Props {
 
 const SubCatTree: React.FC<Props> = ({ categories, isVisible }) => {
   const [display, setDisplay] = useState<number>(-1);
-  const [clickedElem, setClickedElem] = useState<EventTarget>();
+  const [clickedElem, setClickedElem] = useState<EventTarget | null>();
 
   const handleClick = (e: React.MouseEvent, index: number) => {
     if (clickedElem && clickedElem !== e.target) {
@@ -19,6 +19,7 @@ const SubCatTree: React.FC<Props> = ({ categories, isVisible }) => {
     }
     if (index === display) {
       setDisplay(-1);
+      setClickedElem(null);
     } else {
       setDisplay(index);
       setClickedElem(e.target);
@@ -28,7 +29,7 @@ const SubCatTree: React.FC<Props> = ({ categories, isVisible }) => {
   return (
     <div className={isVisible ? '' : 'display-none'}>
       {(categories as Array<SubCat | Categories>).map((cat, index) => (
-        <div onClick={(e) => handleClick(e, index)}>
+        <div key={index} onClick={(e) => handleClick(e, index)}>
           <h5>{cat.title}</h5>
           <Category
             key={index}
