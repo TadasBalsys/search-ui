@@ -8,14 +8,14 @@ export interface SubCat {
   subCat: SubCat[] | Categories[];
 }
 
-interface Categories {
+export interface Categories {
   title: string;
   queryValue: string;
 }
 
 
 
-const rearLamp =  {
+const rearLamp: SubCat =  {
   title: 'Galinis žibintas',
   subCat: [
     {
@@ -78,7 +78,7 @@ const rearLamp =  {
       title: 'Visos kategorijos',
       queryValue: 'All categories',
     },
-  ],
+  ] as Categories[],
 }
 
 const turnLamp =  {
