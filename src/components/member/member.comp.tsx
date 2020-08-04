@@ -1,14 +1,14 @@
 import React from 'react';
+import { Categories } from '../../store/categories';
 
 interface Props {
-  title?: string;
-  subCat?: [];
+  category: Categories
 }
 
-const Member = (props: Props) => {
+const Member: React.FC<Props> = (props: Props) => {
   return (<>
     {
-      <h1>{props.title}</h1>
+      <h1>{props.category.title}</h1>
     }
   </>);
 };
