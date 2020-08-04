@@ -1,16 +1,14 @@
-import React from 'react'
+import React from 'react';
 
 import SuperCatTree from '../SuperCatTree/SuperCatTree.comp';
 
 import { categories } from '../../store/categories';
 
-const SideContainer = () => {
-  return (
-    <div>
-      <input placeholder='Kategorijų paieška'/>
-      <SuperCatTree categories={categories} isVisible />
-    </div>
-  )
-}
+const SideContainer = () => (
+  <div>
+    <input placeholder='Kategorijų paieška' />
+    <SuperCatTree categories={categories} />
+  </div>
+);
 
 export default SideContainer;
