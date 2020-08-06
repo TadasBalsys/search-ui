@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './OptionsContainerSelect.module.scss';
 
 
 export interface CustomSelectPropsInterface{
@@ -7,14 +8,10 @@ export interface CustomSelectPropsInterface{
     
 };
 
-
-// ar imanoma padaryti kad vienas componentas turetu 2 skirtingus pavadinimus ?
 const OptionsContainerSelect: Function = (props:CustomSelectPropsInterface)=>{
-    
-
-    
+  
     return(
-        <select>
+        <select className={classes.OptionsSelectTest}>
             
             <option value={0}>{props.initOptionLabel}</option>
             {
@@ -31,9 +28,7 @@ const OptionsContainerSelect: Function = (props:CustomSelectPropsInterface)=>{
         </select>
     )
 
-
 }
-
 
 export default OptionsContainerSelect;
 

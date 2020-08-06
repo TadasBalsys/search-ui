@@ -5,7 +5,9 @@ import classes from  './FiltersContainer.module.scss';
 import OptionsContainer from './OptionsContainer/OptionsContainer';
 
 import OptionsContainerSelect  from './OptionsContainerSelect/OptionsContainerSelect';
-import { title } from 'process';
+
+import Button from '../Button/Button';
+
 
 
 const FiltersContainer = ()=>{
@@ -46,6 +48,7 @@ const FiltersContainer = ()=>{
             <h5 className={classes.FilterTitle}>{enginePower.title}</h5>
             <OptionsContainerSelect optionsArray={getEnginePowerArray()} initOptionLabel={"Nuo"}/> <br/> <OptionsContainerSelect optionsArray={getEnginePowerArray()} initOptionLabel={"Iki"}/>
             
+            <br/> <Button>FILTRUOTI</Button> <Button>VALYTI</Button>
 
         </div>
     ); 

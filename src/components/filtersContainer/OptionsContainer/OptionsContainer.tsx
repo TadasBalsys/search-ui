@@ -14,8 +14,6 @@ const OptionsContainer: Function = ({data}: props ) => {
 
     return data.SubCat.map((dat:SubCat) => ( 
             <>  
-            
-                
                 <br/>
                 <input type="checkbox" id="deasel"/>
                 <label htmlFor="deasel" > {dat.pav}</label>
