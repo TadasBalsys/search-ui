@@ -10,21 +10,49 @@ interface Props {
   categories: SuperCat[] | SubCat[];
 }
 
-const MemberTree: React.FC<Props> = ({ categories }) => {
-  const [display, setDisplay] = useState<number>(-1);
-  const [clickedElem, setClickedElem] = useState<EventTarget | null>();
+const SuperCatTree: React.FC<Props> = ({ categories }) => {
+  const [display, setDisplay] = useState<number[]>([-1]);
+  const [clickedElem, setClickedElem] = useState<EventTarget[]>([]);
 
   const handleClick = (e: React.MouseEvent, index: number) => {
-    if (clickedElem && clickedElem !== e.target) {
+    // }
+    // if (display.includes(index)) {
+    //   setDisplay([-1]);
+
+    // } else {
+    //   setDisplay([...display, index]);
+    // }
+
+    console.log(index);
+    if (clickedElem?.length && !clickedElem.includes(e.target)) {
+      console.log('return if');
       return;
     }
-    if (index === display) {
-      setDisplay(-1);
-      setClickedElem(null);
-    } else {
-      setDisplay(index);
-      setClickedElem(e.target);
+    if (display.includes(index)) {
+      console.log('if includes part');
+      let indexInArr = display.indexOf(index);
+      let newDisplayArr = [...display];
+      newDisplayArr.splice(indexInArr, 1);
+
+      let elemIndex = clickedElem.indexOf(e.target);
+      let newClickElemArr = [...clickedElem];
+      let newClickedElemArr = newClickElemArr.splice(elemIndex, 1);
+      console.log(clickedElem);
+      setClickedElem(newClickedElemArr);
+      return setDisplay(newDisplayArr);
     }
+    console.log(clickedElem);
+    setClickedElem([...clickedElem, e.target]);
+    return setDisplay([...display, index]);
+  };
+
+
+
+
+  
+
+  const toggleVisib = (index: number) => {
+    return display.includes(index);
   };
 
   return (
@@ -35,7 +63,7 @@ const MemberTree: React.FC<Props> = ({ categories }) => {
             <h5>{subCat.title}</h5>
             <SubCatTree
               key={index}
-              isVisible={display === index}
+              isVisible={toggleVisib(index)}
               categories={subCat.subCat as SubCat[]}
             />
           </div>
@@ -45,4 +73,4 @@ const MemberTree: React.FC<Props> = ({ categories }) => {
   );
 };
 
-export default MemberTree;
+export default SuperCatTree;
