@@ -303,20 +303,7 @@ export const getEnginePowerArray =() =>{
 }
 
 
-export const carsName= ()=>{
-    const option =['Audi','BMW', "LADA"]
-    return option;
-}
 
-export const carsModel= ()=>{
-    const option =['']
-    return option;
-}
-
-export const carsModification= ()=>{
-    const option =['']
-    return option;
-}
 
 
 

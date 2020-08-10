@@ -11,7 +11,7 @@ export interface CustomSelectPropsInterface{
 const OptionsContainerSelect: Function = (props:CustomSelectPropsInterface)=>{
   
     return(
-        <select className={classes.OptionsSelectTest}>
+        <select className={classes.OptionsSelectTest} >
             
             <option value={0}>{props.initOptionLabel}</option>
             {

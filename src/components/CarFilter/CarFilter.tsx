@@ -1,12 +1,93 @@
-import React, { useState } from 'react';
-import classes from './SelectLists.module.scss';
-
-import { carsName, carsModel, carsModification } from '../../store/filtersList';
+import React from 'react';
+import CarFilterItem from './CarFilterItem/CarFilterItem'
 import Button from '../Button/Button';
-import SelectList from './SelectList/SelectList';
-import { render } from '@testing-library/react';
+import classes from './CarsFilter.module.scss';
 
-interface AddSelectinterface{
+
+interface CarsFilterPropsInterface {
+    carsFilterItems: carFilterItemDataInterface[];
+    onAddCarFilter: () => void;
+    onRemoveCarFilter: (id: number) => void;
+}
+
+export interface carFilterItemDataInterface {
+    
+    id: number,
+    carBrands: string[],
+    carModels: string[],
+    carModifications: string[],
+}
+
+
+const CarsFilter = (props:CarsFilterPropsInterface) =>{
+    return(
+        <div className={classes.DivTest}>
+            <ul className="cars-filter-list">
+                {
+                    props.carsFilterItems.map(item =>{
+                        return <CarFilterItem 
+                    
+                        id={item.id}
+                        carBrands={item.carBrands}
+                        carModels={item.carModels}
+                        carModifications={item.carModifications}
+                        onRemoveCarFilter={props.onRemoveCarFilter}
+                        />
+                    })
+                }
+
+            </ul>
+            <Button clicked={props.onAddCarFilter}>Prideti dar viena automobili</Button>
+        </div>
+    )
+}
+
+export default CarsFilter;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*interface AddSelectinterface{
     added?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     removed?: (event: React.MouseEvent<HTMLButtonElement>) => {};
     disabled?: boolean;
@@ -65,4 +146,4 @@ const SelectLists = ()=> {
 }
 
 
-export default SelectLists;
+export default SelectLists;*/
