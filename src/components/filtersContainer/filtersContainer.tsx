@@ -14,12 +14,12 @@ const FiltersContainer = ()=>{
         
         return (
 
-        <div className={classes.MainContainer}>
+        <div className={classes.MainContainer} >
 
             <h3 className={classes.Aside}>Filtruoti rezultatai</h3>
 
             <h5 className={classes.FilterTitle}>{fuelType.title}</h5>
-            <OptionsContainer data={fuelType} key={fuelType.id} />
+            <OptionsContainer data={fuelType} key={fuelType.id}  />
 
             <h5 className={classes.FilterTitle}>{vehicleBodyType.title}</h5>
             <OptionsContainer data={vehicleBodyType} key={vehicleBodyType.id}/>
@@ -37,7 +37,7 @@ const FiltersContainer = ()=>{
             <OptionsContainer data={part_Of_Place} key={part_Of_Place.id}/>
 
             <h5 className={classes.FilterTitle}>{color.title}</h5>
-            <OptionsContainer data={color} key={color.id}/>
+            <OptionsContainer data={color} key={color.id} />
             
             <h5 className={classes.FilterTitle}>{year.title}</h5>
             <OptionsContainerSelect optionsArray={getYearsArray()} initOptionLabel={"Nuo"}/> <OptionsContainerSelect optionsArray={getYearsArray()} initOptionLabel={"Iki"} /> 
@@ -48,7 +48,7 @@ const FiltersContainer = ()=>{
             <h5 className={classes.FilterTitle}>{enginePower.title}</h5>
             <OptionsContainerSelect optionsArray={getEnginePowerArray()} initOptionLabel={"Nuo"}/> <br/> <OptionsContainerSelect optionsArray={getEnginePowerArray()} initOptionLabel={"Iki"}/>
             
-            <br/> <Button>FILTRUOTI</Button> <Button>VALYTI</Button>
+            <br/> <Button>FILTRUOTI</Button> <Button>IŠVALYTI</Button>
 
         </div>
     ); 

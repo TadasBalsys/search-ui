@@ -103,7 +103,7 @@ export const vehicleBodyType = {
 }
 
 export const gearBox = {
-    title: "Greičio dėžė",
+    title: "Pavarų dėžė",
     id:'gear box',
     SubCat:[
         {
@@ -137,7 +137,7 @@ export const driveWheels ={
 }
 
 export const steering_Wheel_Position = {
-    title:"Varomiejo ratai",
+    title:"Vairo padėtis",
     id:'steering wheel position',
     SubCat:[
         {
@@ -151,7 +151,7 @@ export const steering_Wheel_Position = {
 }
 
 export const part_Of_Place = {
-    title:"Dalies vieta",
+    title:"Detalės pozicija",
     id:'pars of place',
     SubCat:[
         {
@@ -264,11 +264,11 @@ export const getEngineVolumeArray= () =>{
     let option =[]
 //if salyga kad sudeliotu skirtingas sekas
     for(let i=800; i<=7000; i= i + volume){
-        if (i>=2000 && i <2200 ||
-            i>=2800 && i <3200 || 
-            i>=3300 && i <3500 || 
-            i>=3800 && i <4400 || 
-            i>=5000 && i <5200 ){
+        if ((i>=2000 && i <2200) ||
+            (i>=2800 && i <3200) ||
+            (i>=3300 && i <3500) ||
+            (i>=3800 && i <4400) || 
+            (i>=5000 && i <5200 )){
             volume=200;
         }
         else if (i >=4400 && i<5000)
@@ -301,12 +301,5 @@ export const getEnginePowerArray =() =>{
     return option;
 
 }
-
-
-
-
-
-
-
 
 

@@ -26,7 +26,7 @@ const CarsFilter = (props:CarsFilterPropsInterface) =>{
                 {
                     props.carsFilterItems.map(item =>{
                         return <CarFilterItem 
-                    
+                        key={item.id}
                         id={item.id}
                         carBrands={item.carBrands}
                         carModels={item.carModels}
@@ -37,9 +37,12 @@ const CarsFilter = (props:CarsFilterPropsInterface) =>{
                 }
 
             </ul>
-            <Button clicked={props.onAddCarFilter}>Prideti dar viena automobili</Button>
+            <Button clicked={props.onAddCarFilter}>Prideti dar vieną automobilį</Button>  <Button>FILTRUOTI</Button>
+           
         </div>
+        
     )
+    
 }
 
 export default CarsFilter;
