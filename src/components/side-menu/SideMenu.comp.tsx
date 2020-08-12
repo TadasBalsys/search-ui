@@ -4,22 +4,28 @@ import Member from '../member/member.comp';
 
 import { mockState } from '../../store/categories';
 
-class SideMenu extends Component {
+export interface State {
+  [key: string]: {} | {};
+}
+
+class SideMenu extends Component<{}, State> {
   state = {
-    selectedOptions: {}
-  }
+    selectedOptions: {},
+  };
 
   render() {
     return (
       <div>
         <Member
           options={mockState}
-          onChange={(selectedOptions: any) => this.setState(selectedOptions)}
+          onChange={(selectedOptions: State) => {
+            this.setState(selectedOptions);
+          }}
           selectedOptions={this.state.selectedOptions}
         />
       </div>
     );
   }
-};
+}
 
 export default SideMenu;

@@ -51,15 +51,22 @@ const ShopPage = () => {
       };
     return (
         <div className={classes.DivTest}>
-            <SideMenu />
-            <FiltersContainer />
-            <CarsFilter
-                onRemoveCarFilter={removeCarFilterHandler}
-                onAddCarFilter={addCarFilterHandler}
-                carsFilterItems={carsFilterItems}
-            />
-            <FilterInfo/>
-            <FilterResult/>
+            <div>
+                <SideMenu />
+                <FiltersContainer />
+            </div>
+            
+            <div>
+                <CarsFilter
+                    onRemoveCarFilter={removeCarFilterHandler}
+                    onAddCarFilter={addCarFilterHandler}
+                    carsFilterItems={carsFilterItems}
+                />
+                <FilterInfo/>
+                <FilterResult/>
+                <FilterInfo/>
+            </div>
+           
         </div>
     )
 }

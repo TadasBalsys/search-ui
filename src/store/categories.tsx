@@ -15,10 +15,10 @@ export interface Categories {
 // Mock Data to test approach
 //  <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>
 
-interface DataModal {
+export interface DataModal {
   title: string;
   id: string;
-  subCat: [];
+  subOptions: DataModal[] | never[];
 }
 
 const mockData = {
@@ -70,7 +70,7 @@ const mockData = {
 
 const mockData2 = {
   title: 'Degalų mišinio uždegimo sistema',
-  id: ' ignition-2',
+  id: 'ignition-2',
   subOptions: [
     {
       title: 'Aukštos įtampos ritė "babyna"',
@@ -110,7 +110,7 @@ const mockData2 = {
   ],
 };
 
-export const mockState = [
+export const mockState: DataModal[] = [
   {
     title: 'Apšvietimo sistemos',
     id: 'lights-1',

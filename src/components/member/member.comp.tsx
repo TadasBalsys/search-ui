@@ -2,17 +2,19 @@ import React from 'react';
 
 import CheckBox from '../check-box/CheckBox.comp';
 
+import { State as subOptions } from '../side-menu/SideMenu.comp';
+import { DataModal } from '../../store/categories';
+
 import './member.styles.scss';
 
 interface Props {
-  options: any;
-  selectedOptions: any;
-  onChange: any;
+  options: DataModal[];
+  selectedOptions: subOptions;
+  onChange: (selectedOptions: subOptions) => void;
 }
 
 const Member: React.FC<Props> = ({ options, selectedOptions, onChange }) => {
-  const handleCheckboxClicked = (selectedOptionId: any) => {
-    console.log('handleCheckboxClicked');
+  const handleCheckboxClicked = (selectedOptionId: keyof DataModal) => {
     // is currently selected
     if (selectedOptions[selectedOptionId]) {
       // remove selected key from options list
@@ -26,8 +28,10 @@ const Member: React.FC<Props> = ({ options, selectedOptions, onChange }) => {
     onChange(selectedOptions);
   };
 
-  const handleSubOptionsListChange = (optionId: any, subSelections: any) => {
-    console.log('handleSubOptionsListChange');
+  const handleSubOptionsListChange = (
+    optionId: keyof DataModal,
+    subSelections: subOptions
+  ) => {
     // add sub selections to current optionId
     selectedOptions[optionId] = subSelections;
     // call onChange function given by parent
@@ -36,27 +40,32 @@ const Member: React.FC<Props> = ({ options, selectedOptions, onChange }) => {
 
   return (
     <div>
-      {options.map((option: any) => (
-        <ul>
-          <CheckBox
-            selected={selectedOptions[option.id]}
-            label={option.title}
-            onChange={() => {
-              handleCheckboxClicked(option.id);
-            }}
-          />
-          {/* Base Case */}
-          {option.subOptions.length > 0 && selectedOptions[option.id] && (
-            <Member
-              options={option.subOptions}
-              selectedOptions={selectedOptions[option.id]}
-              onChange={(subSelections: any) =>
-                handleSubOptionsListChange(option.id, subSelections)
-              }
+      {options.map((option: DataModal, index: number) => {
+        return (
+          <ul key={index}>
+            <CheckBox
+              selected={selectedOptions[option.id]}
+              label={option.title}
+              onChange={() => {
+                handleCheckboxClicked(option.id as keyof DataModal);
+              }}
             />
-          )}
-        </ul>
-      ))}
+            {/* Base Case */}
+            {option.subOptions.length > 0 && selectedOptions[option.id] && (
+              <Member
+                options={option.subOptions}
+                selectedOptions={selectedOptions[option.id]}
+                onChange={(subSelections: subOptions) => {
+                  return handleSubOptionsListChange(
+                    option.id as keyof DataModal,
+                    subSelections
+                  );
+                }}
+              />
+            )}
+          </ul>
+        );
+      })}
     </div>
   );
 };
