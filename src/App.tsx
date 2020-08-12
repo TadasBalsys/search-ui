@@ -3,9 +3,10 @@ import MemberTree from './components/member/MemberTree.comp';
 
 import { categories } from './store/categories';
 import FiltersContainer from './components/filtersContainer/filtersContainer';
-import CarFilterItem from './components/CarFilter/CarFilterItem/CarFilterItem';
+
 import CarsFilter, { carFilterItemDataInterface } from './components/CarFilter/CarFilter';
 import FilterResult from './components/FIlterResult.tsx/FilterResult';
+import FilterInfo from './components/FIlterResult.tsx/FilterInfo/FilterInfo';
 
 
 const App = (): JSX.Element => {
@@ -59,6 +60,7 @@ const App = (): JSX.Element => {
         onAddCarFilter={addCarFilterHandler}
         carsFilterItems={carsFilterItems}
     />
+    <FilterInfo/>
     <FilterResult/>
   </div>
 )}

@@ -2,19 +2,19 @@ import React from 'react';
 import classes from './CarFilterItemComponent.module.scss';
 
 export const carBrands={
-    title:'Auto markė',
+    title:'Automobilio markė',
     id:'carBrand',
     subCateg:['Pasirinkti', 'BMW', 'Audi', 'Suzuki']
 }
 
 export const carModel={
-    title:'Auto modelis',
+    title:'Automobilio modelis',
     id:'carModel',
     subCateg:['Pasirinkti', '1', '2', '3']
 }
 
 export const carModificaton={
-    title:'Auto modifikacija',
+    title:'Automobilio modifikacija',
     id:'carModification',
     subCateg:['Pasirinkti', 'V6', 'V12', 'V16']
        
@@ -35,7 +35,7 @@ const Car: Function =(props:MainCarFilterCompInterface) =>{
         <select name={props.title + props.id} id={props.title + props.id} className={classes.SelectTest}>
             {
                 props.subCateg.map((rrr, index) =>{
-                    console.log(rrr);
+                    
                     return <option key={props.title + props.id + index} >{rrr}</option>
                 })
             }
@@ -55,40 +55,6 @@ export default Car;
 
 
 
-/*interface MainCarItemMapInterface {
-    id:string;
-    data: NewCarItemPropsInterface
-}
-
-interface NewCarItemPropsInterface {
-    
-    carBrands: string[],
-    carModels: string[],
-    carModifications: string[],
-}
-
-
-const CarFilterItemComponent = (props:MainCarItemMapInterface) =>{
-    <div className={classes.DivListo}>
-        <label htmlFor={ props.id} className={classes.LabelTest}>Auto marke</label>
-            <select  name={props.id} id={ props.id} className={classes.SelectTest}>
-                {
-                    props.data.map((dat:NewCarItemPropsInterface) => {
-                        console.log(dat)
-                                    return <option key={props.id}>{dat}</option>
-                                
-                                })
-                                
-
-                }
-                
-        </select>
-        
-    </div>
-
-}
-
-export default CarFilterItemComponent;*/
 
 
 

@@ -28,12 +28,3 @@ const OptionsContainer: Function = ({data}: props ) => {
 
 export default OptionsContainer;
 
-// export interface FiltersProps { 
-//     title: string;
-//     SubCat:SubCat[]
-// }
-
-// export interface SubCat {
-//     pav:string
-//     id:string;
-// }
