@@ -15,11 +15,11 @@ const OptionsContainer: Function = ({data}: props ) => {
 
     return data.SubCat.map((dat:SubCat) => ( 
         
-            <div key={dat.id}>  
+            <li key={dat.id}>  
                 <br/>
                 <input type="checkbox" id=""  />
                 <label htmlFor="deasel" > {dat.pav}</label>
-            </div>
+            </li>
         )
         
     )
@@ -28,3 +28,12 @@ const OptionsContainer: Function = ({data}: props ) => {
 
 export default OptionsContainer;
 
+// export interface FiltersProps { 
+//     title: string;
+//     SubCat:SubCat[]
+// }
+
+// export interface SubCat {
+//     pav:string
+//     id:string;
+// }

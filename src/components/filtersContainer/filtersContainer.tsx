@@ -17,27 +17,49 @@ const FiltersContainer = ()=>{
         <div className={classes.MainContainer} >
 
             <h3 className={classes.Aside}>Filtruoti rezultatai</h3>
-
-            <h5 className={classes.FilterTitle}>{fuelType.title}</h5>
-            <OptionsContainer data={fuelType} key={fuelType.id}  />
-
-            <h5 className={classes.FilterTitle}>{vehicleBodyType.title}</h5>
-            <OptionsContainer data={vehicleBodyType} key={vehicleBodyType.id}/>
-
+            <div>
+                <ul>
+                    <h5 className={classes.FilterTitle}>{fuelType.title}</h5>
+                    <OptionsContainer data={fuelType} key={fuelType.id}  />
+                </ul>
+            </div>
+            
+            <div>
+                <ul>
+                    <h5 className={classes.FilterTitle}>{vehicleBodyType.title}</h5>
+                    <OptionsContainer data={vehicleBodyType} key={vehicleBodyType.id}/>
+                </ul>
+            </div>
+            
+            <div>
+                <ul></ul>
+            </div>
             <h5 className={classes.FilterTitle}>{gearBox.title}</h5>
             <OptionsContainer data={gearBox} key={gearBox.id}/>
-
+            <div>
+                <ul></ul>
+            </div>
             <h5 className={classes.FilterTitle}>{driveWheels.title}</h5>
             <OptionsContainer data={driveWheels} key={driveWheels.id}/>
-
+            <div>
+                <ul></ul>
+            </div>
             <h5 className={classes.FilterTitle}>{steering_Wheel_Position.title}</h5>
             <OptionsContainer data={steering_Wheel_Position} key={steering_Wheel_Position.id}/>
+            <div>
+                <ul>
+                    <h5 className={classes.FilterTitle}>{part_Of_Place.title}</h5>
+                    <OptionsContainer data={part_Of_Place} key={part_Of_Place.id}/>
+                </ul>
+            </div>
 
-            <h5 className={classes.FilterTitle}>{part_Of_Place.title}</h5>
-            <OptionsContainer data={part_Of_Place} key={part_Of_Place.id}/>
-
-            <h5 className={classes.FilterTitle}>{color.title}</h5>
-            <OptionsContainer data={color} key={color.id} />
+            <div>
+                <ul>
+                    <h5 className={classes.FilterTitle}>{color.title}</h5>
+                    <OptionsContainer data={color} key={color.id} />
+                </ul>
+            </div>
+            
             
             <h5 className={classes.FilterTitle}>{year.title}</h5>
             <OptionsContainerSelect optionsArray={getYearsArray()} initOptionLabel={"Nuo"}/> <OptionsContainerSelect optionsArray={getYearsArray()} initOptionLabel={"Iki"} /> 
