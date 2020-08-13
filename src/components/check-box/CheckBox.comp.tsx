@@ -1,6 +1,8 @@
 import React from 'react';
 
+
 import { State as subOptions } from '../side-menu/SideMenu.comp';
+
 
 import './CheckBox.styles.scss';
 
@@ -17,6 +19,8 @@ const CheckBox: React.FC<Props> = ({ selected, label, onChange }) => {
         className={'checkbox__icon'}
         onClick={() => onChange(!selected)}
       ></div>
+      
+
       <div className='label'>{label}</div>
     </li>
   );
