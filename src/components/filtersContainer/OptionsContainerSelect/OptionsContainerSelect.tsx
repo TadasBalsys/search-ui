@@ -5,8 +5,6 @@ import classes from './OptionsContainerSelect.module.scss';
 export interface CustomSelectPropsInterface{
     initOptionLabel: string | number;
     optionsArray: (string|number)[]
-    
-    
 };
 
 const OptionsContainerSelect: Function = (props:CustomSelectPropsInterface)=>{
@@ -24,17 +22,12 @@ const OptionsContainerSelect: Function = (props:CustomSelectPropsInterface)=>{
                         
                              {option} 
                         
-                    </option>
-                    
+                    </option>  
                 )
                 })
-                
             }
-            
         </select>
     )
-    
-
 }
 
 export default OptionsContainerSelect;

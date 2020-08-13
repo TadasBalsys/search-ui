@@ -4,12 +4,8 @@ import ShopPage from './ShopPage/ShopPage';
 
 const App = (): JSX.Element => {
 
-    return <ShopPage />;
+    return <ShopPage />
 
 }
-
-  
-
-
 
 export default App;

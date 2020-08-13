@@ -8,12 +8,9 @@ import OptionsContainerSelect  from './OptionsContainerSelect/OptionsContainerSe
 
 import Button from '../Button/Button';
 
-
-
 const FiltersContainer = ()=>{
         
         return (
-
         <div className={classes.MainContainer} >
 
             <h3 className={classes.Aside}>Filtruoti rezultatai</h3>
@@ -44,10 +41,8 @@ const FiltersContainer = ()=>{
             </div>
             <div>
                 <ul>
-                  
-            <h5 className={classes.FilterTitle}>{steering_Wheel_Position.title}</h5>
-            <OptionsContainer data={steering_Wheel_Position} key={steering_Wheel_Position.id}/>
-           
+                    <h5 className={classes.FilterTitle}>{steering_Wheel_Position.title}</h5>
+                    <OptionsContainer data={steering_Wheel_Position} key={steering_Wheel_Position.id}/>
                 </ul>
             </div>
             <div>

@@ -12,10 +12,6 @@ export interface props {
 }
 
 const OptionsContainer: Function = ({data}: props ) => {
-   
-
-    
-    
 
     return data.SubCat.map((dat:SubCat) => ( 
         
@@ -25,20 +21,9 @@ const OptionsContainer: Function = ({data}: props ) => {
                 <label htmlFor="deasel" > {dat.pav}</label>
             </li>
         
-        )
-        
-    )
-    
+        ) 
+    );
 }
 
 export default OptionsContainer;
 
-// export interface FiltersProps { 
-//     title: string;
-//     SubCat:SubCat[]
-// }
-
-// export interface SubCat {
-//     pav:string
-//     id:string;
-// }

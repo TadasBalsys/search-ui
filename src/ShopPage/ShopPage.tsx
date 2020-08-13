@@ -34,7 +34,6 @@ const ShopPage = () => {
               const newCarFilterItem = {
                   ...carFilterInitialItem,
                   id: date.getTime(),
-                  
               };
     
               updatedItems.push(newCarFilterItem);
@@ -68,7 +67,7 @@ const ShopPage = () => {
             </div>
            
         </div>
-    )
+    );
 }
 
 export default ShopPage;
