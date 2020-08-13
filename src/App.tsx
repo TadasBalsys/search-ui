@@ -1,13 +1,13 @@
 import React from 'react';
-import MemberTree from './components/member-tree/MemberTree.comp';
-
-import { categories } from './store/categories';
+// import MemberTree from './components/member-tree/MemberTree.comp';
+import SideMenu from './components/side-menu/SideMenu.comp';
 
 const App = (): JSX.Element => {
   return (
-    <div className="App">
-      <MemberTree isVisible categories={categories}></MemberTree>
+    <div className='App'>
+      <SideMenu />
     </div>
-)}
+  );
+};
 
 export default App;

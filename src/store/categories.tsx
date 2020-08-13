@@ -12,10 +12,120 @@ export interface Categories {
   title: string;
   queryValue: string;
 }
+// Mock Data to test approach
+//  <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>
 
+export interface DataModal {
+  title: string;
+  id: string;
+  subOptions: DataModal[] | never[];
+}
 
+const mockData = {
+  title: 'Galinis žibintas',
+  id: 'rear-1',
+  subOptions: [
+    {
+      title: 'Atbulinės eigos žibintas',
+      id: 'rear-2',
+      subOptions: [],
+    },
+    {
+      title: 'Galinio žibinto apdaila (juostelė)',
+      id: 'rear-3',
+      subOptions: [],
+    },
+    {
+      title: 'Galinio žibinto dangtelis (lizdas)',
+      id: 'rear-4',
+      subOptions: [],
+    },
+    {
+      title: 'Galinio žibinto detalė',
+      id: 'rear-5',
+      subOptions: [],
+    },
+    {
+      title: 'Galinio žibinto stiklas (dangtyje)',
+      id: 'rear-6',
+      subOptions: [],
+    },
+    {
+      title: 'Galinio žibinto stiklas (kėbule)',
+      id: 'rear-7',
+      subOptions: [],
+    },
+    {
+      title: 'Galinis atšvaitas',
+      id: 'rear-8',
+      subOptions: [],
+    },
+    {
+      title: 'Galinis žibintas bamperyje',
+      id: 'rear-9',
+      subOptions: [],
+    },
+  ],
+};
 
-const rearLamp: SubCat =  {
+const mockData2 = {
+  title: 'Degalų mišinio uždegimo sistema',
+  id: 'ignition-2',
+  subOptions: [
+    {
+      title: 'Aukštos įtampos ritė "babyna"',
+      id: 'ignition-3',
+      subOptions: [],
+    },
+    {
+      title: 'Aukštos įtampos uždegimo lizdas (žvaklaidis)',
+      id: 'ignition-4',
+      subOptions: [],
+    },
+    {
+      title: 'Dangtelis kibirkšties paskirstytojo (tramplioriaus)',
+      id: 'ignition-5',
+      subOptions: [],
+    },
+    {
+      title: 'Degimo modulis "Komutatorius"',
+      id: 'ignition-6',
+      subOptions: [],
+    },
+    {
+      title: 'Kibirkšties paskirstytojas (trampliorius)',
+      id: 'ignition-7',
+      subOptions: [],
+    },
+    {
+      title: 'Pakaitinimo žvakė (-ės)',
+      id: 'ignition-8',
+      subOptions: [],
+    },
+    {
+      title: 'Skriejikas (bėgunokas)',
+      id: 'ignition-9',
+      subOptions: [],
+    },
+  ],
+};
+
+export const mockState: DataModal[] = [
+  {
+    title: 'Apšvietimo sistemos',
+    id: 'lights-1',
+    subOptions: [mockData],
+  },
+  {
+    title: 'Degalų mišinio sistema',
+    id: 'ignition-1',
+    subOptions: [mockData2],
+  },
+];
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<End of Mock Data>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+const rearLamp: SubCat = {
   title: 'Galinis žibintas',
   subCat: [
     {
@@ -79,9 +189,9 @@ const rearLamp: SubCat =  {
       queryValue: 'All categories',
     },
   ] as Categories[],
-}
+};
 
-const turnLamp =  {
+const turnLamp = {
   title: 'Posūkio žibintai',
   subCat: [
     {
@@ -101,11 +211,11 @@ const turnLamp =  {
       queryValue: 'All categories',
     },
   ],
-}
+};
 
 const headlamp = {
   title: 'Priekiniai žibintai',
-  subCat:[
+  subCat: [
     {
       title: 'LED dienos žibintas',
       queryValue: 'LED daytime running lamp',
@@ -162,13 +272,12 @@ const headlamp = {
       title: 'Visos kategorijos',
       queryValue: 'All categories',
     },
-
   ],
-}
+};
 
 const fogLamp = {
-  title:'Priešrūkiniai žibintai',
-  subCat:[
+  title: 'Priešrūkiniai žibintai',
+  subCat: [
     {
       title: 'Negamyklinis (papildomas) priešrūkinis žibintas',
       queryValue: 'Non - factory (optional) fog lamp',
@@ -197,12 +306,12 @@ const fogLamp = {
       title: 'Visos kategorijos',
       queryValue: 'All categories',
     },
-  ]
-}
+  ],
+};
 
 const interiorLighting = {
   title: 'Salono apšvietimas',
-  subCat:[
+  subCat: [
     {
       title: 'Bagažinės apšvietimo žibintas',
       queryValue: 'Trunk lamp',
@@ -248,11 +357,11 @@ const interiorLighting = {
       queryValue: 'All categories',
     },
   ],
-}
+};
 
 const fuel_Tank_Filling_Supply = {
-  title:'Degalų bakas/ užpildymas/ tiekimas',
-  subCat:[
+  title: 'Degalų bakas/ užpildymas/ tiekimas',
+  subCat: [
     {
       title: 'Aktyvios anglies (degalų garų) filtras',
       queryValue: 'Activated carbon (fuel vapor) filter',
@@ -361,13 +470,12 @@ const fuel_Tank_Filling_Supply = {
       title: 'Visos kategorijos',
       queryValue: 'All categories',
     },
-
-  ]
-}
+  ],
+};
 
 const fuel_Injection_System = {
-  title:'Degalų įpurškimo sistema',
-  subCat:[
+  title: 'Degalų įpurškimo sistema',
+  subCat: [
     {
       title: 'Degalų įpurškimas kita',
       queryValue: 'Fuel injection other',
@@ -432,13 +540,12 @@ const fuel_Injection_System = {
       title: 'Visos kategorijos',
       queryValue: 'All categories',
     },
-
-  ]
-}
+  ],
+};
 
 const fuel_Mixture_Ignition_System = {
   title: 'Degalų mišinio uždegimo sistema',
-  subCat:[
+  subCat: [
     {
       title: 'Aukštos įtampos ritė "babyna"',
       queryValue: 'High voltage coil "babyna"',
@@ -475,12 +582,12 @@ const fuel_Mixture_Ignition_System = {
       title: 'Visos kategorijos',
       queryValue: 'All categories',
     },
-  ]
-}
+  ],
+};
 
 const gasEquipment = {
-  title:'Dujų įranga',
-  subCat:[
+  title: 'Dujų įranga',
+  subCat: [
     {
       title: 'Balionas',
       queryValue: 'Gas cylinder',
@@ -529,12 +636,12 @@ const gasEquipment = {
       title: 'Visos kategorijos',
       queryValue: 'All categories',
     },
-  ]
-}
+  ],
+};
 
 const carburettor_Mono_Injection = {
-  title:'Karbiuratorius / mono įpurškimas',
-  subCat:[
+  title: 'Karbiuratorius / mono įpurškimas',
+  subCat: [
     {
       title: 'Karbiuratoriaus/ mono įpurškimo padas',
       queryValue: 'Carburettor / mono injection pad',
@@ -555,12 +662,12 @@ const carburettor_Mono_Injection = {
       title: 'Visos kategorijos',
       queryValue: 'All categories',
     },
-  ]
-}
+  ],
+};
 
 const air_Supply_System = {
   title: 'Oro padavimo sistema',
-  subCat:[
+  subCat: [
     {
       title: 'Droselinė sklendė',
       queryValue: 'Throttle valve',
@@ -661,12 +768,12 @@ const air_Supply_System = {
       title: 'Visos kategorijos',
       queryValue: 'All categories',
     },
-  ]
-}
+  ],
+};
 
 const exhaustSystem = {
-  title:'Dujų išmetimo sistema',
-  subCat:[
+  title: 'Dujų išmetimo sistema',
+  subCat: [
     {
       title: 'Duslintuvas',
       queryValue: 'Muffler',
@@ -719,12 +826,12 @@ const exhaustSystem = {
       title: 'Visos kategorijos',
       queryValue: 'All categories',
     },
-  ]
-}
+  ],
+};
 
 const exhaust_Gas_Cleaning_System = {
   title: 'Išmetamų dujų valymo sistema',
-  subCat:[
+  subCat: [
     {
       title: 'AdBlue purkštukas',
       queryValue: 'AdBlue nozzle',
@@ -789,11 +896,11 @@ const exhaust_Gas_Cleaning_System = {
       title: 'Visos kategorijos',
       queryValue: 'All categories',
     },
-  ]
-}
+  ],
+};
 const backDoor = {
-  title:'Galinės durys',
-  subCat:[
+  title: 'Galinės durys',
+  subCat: [
     {
       title: 'Apdaila galinių durų (moldingas)',
       queryValue: 'Rear door trim (molding)',
@@ -914,44 +1021,30 @@ const backDoor = {
       title: 'Visos kategorijos',
       queryValue: 'All categories',
     },
-  ]
-}
+  ],
+};
 export const categories: SuperCat[] = [
   {
     title: 'Apšvietimo sistemos',
-    subCat: [
-     rearLamp,
-     turnLamp,
-     headlamp,
-     fogLamp,
-     interiorLighting,
-
-    ],
+    subCat: [rearLamp, turnLamp, headlamp, fogLamp, interiorLighting],
   },
   {
     title: 'Degalų mišinio sistema',
     subCat: [
-     fuel_Tank_Filling_Supply,
-     fuel_Injection_System,
-     fuel_Mixture_Ignition_System,
-     gasEquipment,
-     carburettor_Mono_Injection,
-     air_Supply_System,
-    
+      fuel_Tank_Filling_Supply,
+      fuel_Injection_System,
+      fuel_Mixture_Ignition_System,
+      gasEquipment,
+      carburettor_Mono_Injection,
+      air_Supply_System,
     ],
   },
   {
     title: 'Dujų išmetimo sistema',
-    subCat: [
-     exhaustSystem,
-     exhaust_Gas_Cleaning_System,
-    
-    ],
+    subCat: [exhaustSystem, exhaust_Gas_Cleaning_System],
   },
   {
     title: 'Durys',
-    subCat:[
-      backDoor
-    ]
-  }
+    subCat: [backDoor],
+  },
 ];
