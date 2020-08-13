@@ -1,5 +1,4 @@
 import React from 'react';
-import { Categories } from '../../store/categories';
 
 import CheckBox from '../check-box/CheckBox.comp';
 

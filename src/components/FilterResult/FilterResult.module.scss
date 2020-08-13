@@ -1,0 +1,18 @@
+.MainDivStyle {
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.5s ease;
+  border: 1px solid #e7e7e7;
+  margin: 0 0 10px 0;
+  display: flex;
+  position: relative;
+}
+
+.SubClassDiv {
+  padding: 15px 15px 15px 13px;
+  flex-flow: column nowrap;
+  flex: 1 1 0;
+}
+
+.Test {
+  display: inline;
+}
