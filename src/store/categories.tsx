@@ -110,11 +110,39 @@ const mockData2 = {
   ],
 };
 
+const mockData3 = {
+  title: 'Posūkio žibintai',
+  id: 'rear-0200',
+  subOptions: [
+    {
+      title: 'Posūkio žibintas veidrodėlyje',
+      id: 'rear-0201',
+      subOptions: [],
+    },
+    {
+      title: 'Priekinis posūkio žibintas',
+      id: 'rear-0202',
+      subOptions: [],
+    },
+    {
+      title: 'Sparno posūkio žibintas',
+      id: 'rear-0203',
+      subOptions: [],
+    },
+    {
+      title: 'Visos kategorijos',
+      id: 'rear-0204',
+      subOptions: [],
+    },
+  ],
+};
+
+
 export const mockState: DataModal[] = [
   {
     title: 'Apšvietimo sistemos',
     id: 'lights-1',
-    subOptions: [mockData],
+    subOptions: [mockData, mockData3],
   },
   {
     title: 'Degalų mišinio sistema',
